@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/",
+    "bodyPatterns": [ {
+      "equalToJson" : { "credit_card": "1234567890",  "amount":  11 }
+    } ]
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": { "id": 1},
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
