@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.core.domain;
+package com.playtomic.tests.wallet.core.domain.model;
 
 import java.math.BigDecimal;
 

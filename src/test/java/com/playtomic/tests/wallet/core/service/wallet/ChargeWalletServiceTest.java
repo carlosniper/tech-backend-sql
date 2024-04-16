@@ -1,10 +1,10 @@
 package com.playtomic.tests.wallet.core.service.wallet;
 
 import com.playtomic.tests.wallet.adapter.incoming.rest.request.ChargeWalletRequest;
-import com.playtomic.tests.wallet.adapter.outgoing.persistence.wallet.WalletPersistencePort;
 import com.playtomic.tests.wallet.adapter.outgoing.rest.StripeService;
 import com.playtomic.tests.wallet.adapter.outgoing.rest.responses.Payment;
-import com.playtomic.tests.wallet.core.domain.Wallet;
+import com.playtomic.tests.wallet.core.domain.model.Wallet;
+import com.playtomic.tests.wallet.core.domain.port.outgoing.WalletPersistencePort;
 import com.playtomic.tests.wallet.core.exceptions.wallet.WalletChargeException;
 import com.playtomic.tests.wallet.core.exceptions.wallet.WalletNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;

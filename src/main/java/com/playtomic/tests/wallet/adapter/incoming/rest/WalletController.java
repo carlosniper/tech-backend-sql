@@ -1,9 +1,9 @@
 package com.playtomic.tests.wallet.adapter.incoming.rest;
 
 import com.playtomic.tests.wallet.adapter.incoming.rest.request.ChargeWalletRequest;
-import com.playtomic.tests.wallet.core.domain.Wallet;
-import com.playtomic.tests.wallet.core.port.wallet.ChargeWalletUseCase;
-import com.playtomic.tests.wallet.core.port.wallet.GetSingleWalletUseCase;
+import com.playtomic.tests.wallet.core.domain.model.Wallet;
+import com.playtomic.tests.wallet.core.domain.port.incoming.wallet.ChargeWalletUseCase;
+import com.playtomic.tests.wallet.core.domain.port.incoming.wallet.GetSingleWalletUseCase;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

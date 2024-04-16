@@ -1,6 +1,7 @@
 package com.playtomic.tests.wallet.adapter.outgoing.persistence.wallet;
 
-import com.playtomic.tests.wallet.core.domain.Wallet;
+import com.playtomic.tests.wallet.core.domain.model.Wallet;
+import com.playtomic.tests.wallet.core.domain.port.outgoing.WalletPersistencePort;
 import com.playtomic.tests.wallet.core.exceptions.wallet.WalletNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,17 +34,4 @@ public class WalletPersistenceAdapter implements WalletPersistencePort {
                 .map(entity -> walletMapper.toWallet(entity))
                 .orElseThrow(() -> new WalletNotFoundException());
     }
-
-    /*
-    Optional<WalletEntity> walletEntityOptional = walletRepository.findById(wallet.getId());
-        if(walletEntityOptional.isPresent()) {
-            var entity = walletEntityOptional.get();
-            entity.setAmount(wallet.getAmount());
-            walletRepository.save(entity);
-            log.info("Wallet updated!");
-            return new Wallet(entity.getId(), entity.getAmount());
-        }
-        log.info("Wallet not found!!");
-        return null;
-     */
 }
