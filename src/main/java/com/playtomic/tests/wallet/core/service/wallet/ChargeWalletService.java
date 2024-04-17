@@ -8,6 +8,7 @@ import com.playtomic.tests.wallet.core.domain.port.outgoing.WalletPersistencePor
 import com.playtomic.tests.wallet.core.exceptions.stripe.StripeAmountTooSmallException;
 import com.playtomic.tests.wallet.core.exceptions.wallet.WalletChargeException;
 import com.playtomic.tests.wallet.core.exceptions.wallet.WalletNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class ChargeWalletService implements ChargeWalletUseCase {
     private StripeService stripeService;
 
     @Override
+    @Transactional
     public Wallet chargeWallet(ChargeWalletRequest chargeWallet) {
         log.info("Charging wallet {} with amount {}", chargeWallet.walletId(), chargeWallet.amount());
         if (chargeWallet.amount().compareTo(BigDecimal.valueOf(10)) < 0) {
